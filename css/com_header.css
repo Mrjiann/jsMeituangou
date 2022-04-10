@@ -1,0 +1,98 @@
+/* 头部导航条 */
+.nav {
+    width: 100%;
+    height: 40px;
+    /* background: red; */
+}
+
+.nav-center {
+    width: 1190px;
+    height: 40px;
+    /* background: green; */
+    margin: 0 auto;
+}
+
+.nav-center-left {
+    width: 400px;
+    height: 40px;
+    /* background: pink; */
+    float: left;
+    line-height: 40px;
+    /* 字体颜色和大小可以继承到span，a下，但颜色不能继承到a下，所以在base.css单独设置a颜色 */
+    font-size: 12px;
+    color: #999;
+}
+
+.nav-center-left a:nth-child(2) {
+    color: #000;
+}
+
+.nav-center-left a:nth-child(3) {
+    color: #000;
+    border: 1px solid #666;
+}
+
+.nav-center-left a:nth-child(5) {
+    color: #FE8C00;
+    padding: 0px 15px;
+}
+
+.nav-center-left a:hover {
+    color: #FE8C00;
+}
+
+.nav-center-right {
+    width: 460px;
+    height: 40px;
+    /* background: rgb(243, 140, 140); */
+    float: right;
+    line-height: 40px;
+    color: #999;
+    font-size: 12px;
+}
+
+/* a标签是行内元素 */
+.nav-center-right a {
+    padding: 0 20px;
+}
+
+.nav-center-right a:hover {
+    color: #FE8C00;
+}
+
+/* 下拉菜单 */
+/* 浮动过后的行内元素更像行内块元素 */
+.dropdown {
+    width: 88px;
+    height: 40px;
+    float: left;
+}
+
+.dropdown ul {
+    width: 86px;
+    height: 160px;
+    background-color: #fff;
+    /* 
+        1.不设置元素偏移量，元素位置不会发生变化
+        2.开启绝对定位后，元素会从文档流中脱离
+        3.绝对定位会改变元素的性质，行内变成块，块的宽高被内容撑开，和浮动一样。
+        4.绝对定位会使元素提高一个层级
+        5.绝对定位元素参照物是离它最近的开启了定位的祖先元素。
+        如果都没开启定位那相对于根元素html
+    */
+    position: absolute;
+    border: 1px solid #E5E5E5;
+    border-top: none;
+    display: none;
+
+}
+.dropdown ul li{
+    text-align: center;
+}
+.dropdown:hover ul{
+    display: block;
+}
+.dropdown ul li:hover{
+    cursor: pointer;
+    color: #FE8C00;
+}
